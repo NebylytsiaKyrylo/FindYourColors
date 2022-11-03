@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  height: 100vh;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.col h2 {
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.col h2:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.col button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.col button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+}
+
+#snackbar {
+  visibility: hidden;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 250px;
+  margin-left: -125px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  left: 50%;
+  bottom: 30px;
+  z-index: 1;
+  position: fixed;
+  font-size: 20px;
+}
+
+/* This will be activated when the snackbar's class is 'show' which will be added through JS */
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein .5s, fadeout .5s 3s;
+  animation: fadein .5s, fadeout .5s 3s;
+}
+
+/* Animations for fading in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
